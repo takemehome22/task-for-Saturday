@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+    <title>document</title>
+</head>
+<body>
+    <div id="wrapper">
+		<p id="counter">
+			10
+		</p>
+		<p id="stop"></p>
+		<button type="submit" class="btn1" onclick="go()" id="go">Запустить таймер!</button>
+	</div>
+    <script>
+        function go()
+        {
+		    window.timerId = window.setInterval(timer, 300);
+		    document.getElementById('go').disabled = true;
+		}
+		function stop()
+        {
+			window.clearInterval(window.timerId);
+		}
+		function timer()
+        {
+			let counter = document.getElementById('counter');
+			let number = parseInt(counter.innerHTML)-1;
+			counter.innerHTML = number;
+			if(number == 0) {
+				stop();
+				let timetStop = document.getElementById('stop');
+				timetStop.innerHTML = 'Обратный отсчет завершен!';
+			}
+		}
+    </script>
+</body>
+</html>

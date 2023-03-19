@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>document</title>
+</head>
+<body>
+    <div id="wrap">
+        <p id="test" class="pul">0</p>
+		<button id="begin" type="submit" class="btn1" onclick="begin()">Запустить таймер</button>
+		<button id="stop" type="submit" class="btn2" onclick="stop()">Остановить таймер</button>
+    </div>
+    <script>
+        function begin()
+        {
+            window.timerId = window.setInterval(timer, 500);
+			document.getElementById('begin').disabled = true;
+			document.getElementById('stop').disabled = false;
+        }
+        function stop()
+        {
+            window.clearInterval(window.timerId);
+			document.getElementById('begin').disabled = false;
+			document.getElementById('stop').disabled = true;
+        }
+        function timer()
+        {
+            let test = document.getElementById('test');
+			test.innerHTML = parseInt(test.innerHTML)+1;
+        }
+    </script>
+</body>
+</html>

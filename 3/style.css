@@ -1,0 +1,10 @@
+p {
+    font-size: 150px;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    flex-direction: row-reverse;
+    padding: 200px;
+    text-shadow: rgb(59 43 46 / 43%) -10px -10px 3px;
+    color: rgb(0 18 245);
+}
